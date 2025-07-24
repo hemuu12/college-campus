@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import CommonProductStatistic from '../CommonComponents/CommonProductStatistic';
+import CommonProducts from '../AtomComponents/CommonProducts';
 
 const AllProductsDetails = () => {
   // edit handlers
@@ -39,15 +39,15 @@ const AllProductsDetails = () => {
 
   return (
     <Box sx={{ p: 2 }}>
-{/* rendering different components through reusable component  CommonProductStatistic*/}
-      <CommonProductStatistic
+{/* rendering different components through reusable component  CommonProducts*/}
+      <CommonProducts
         iconSrc="/assets/Prodcustbaseicon.png"
         title="Product Base Properties"
         onEdit={handleEdit1}
        
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/ProductTrackingImgae.png"
         title="Product Tracking Details"
         onEdit={handleEdit1}
@@ -60,7 +60,7 @@ const AllProductsDetails = () => {
         ]}
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/ProductMetaattrimg.png"
         title="Product Metadata Attributes"
         onEdit={handleEdit2}
@@ -88,7 +88,7 @@ const AllProductsDetails = () => {
         ]}
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/prodimensionpowerimg.png"
         title="Product Dimension & Power"
         onEdit={handleEdit3}
@@ -120,7 +120,7 @@ const AllProductsDetails = () => {
         ]}
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/prodfinancialimg.png"
         title="Product Financials"
         onEdit={handleEdit4}
@@ -148,14 +148,14 @@ const AllProductsDetails = () => {
         ]}
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/prodvehicleimg.png"
         title="Product Vehicles"
         onEdit={handleEdit4}
 
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/productaltimg.png"
         title="Product Alternates"
         onEdit={handleEdit5}
@@ -163,7 +163,7 @@ const AllProductsDetails = () => {
 
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/prodaccessoriesimg.png"
         title="Product Accessories"
         onEdit={handleEdit6}
@@ -171,14 +171,14 @@ const AllProductsDetails = () => {
 
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/prodoptions.png"
         title="Product Options"
         onEdit={handleEdit7}
 
       />
 
-      <CommonProductStatistic
+      <CommonProducts
         iconSrc="/assets/prodassetmgmtimg.png"
         title="Product Asset Management"
         onEdit={handleEdit8}

@@ -1,4 +1,4 @@
-const mockProductData = {
+const mockProductsData = {
   image: '/product.png',
   inventoryClass: 'Pre Production',
   partNumber: '022134',
@@ -21,4 +21,4 @@ const mockProductData = {
   ]
 };
 
-export default mockProductData;
+export default mockProductsData;

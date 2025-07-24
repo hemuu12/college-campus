@@ -97,7 +97,7 @@ const carData = [
   },
 ];
 
-const Vehicletable = () => {
+const VehiclesTable = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -222,4 +222,4 @@ const Vehicletable = () => {
   );
 };
 
-export default Vehicletable;
+export default VehiclesTable;

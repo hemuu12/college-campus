@@ -97,17 +97,20 @@ const ProductAssetMgmnt = () => {
                     href={row.url}
                     target="_blank"
                     underline="hover"
-                    sx={{ display: 'inline-flex', alignItems: 'center' }}
+                    sx={{ display: 'inline-flex', alignItems: 'center', wordBreak: 'break-word' }}
                   >
                     {row.url}
                     <OpenInNewIcon sx={{ fontSize: 16, ml: 0.5 }} />
                   </Link>
                 </td>
                 <td style={{ border: '1px solid #444', textAlign: 'center' }}>
-                  <IconButton size="small" sx={{ color: '#ffffffff', mx: 0.5 ,border:1 , borderRadius:0 }}>
+                  <IconButton size="small" sx={{ color: '#ffffff', mx: 0.5, border: 1, borderRadius: 0 }}>
                     <EditIcon fontSize="small" />
                   </IconButton>
-                  <IconButton size="small" sx={{ color: '#ff6b6b', mx: 0.5, border:1 , borderRadius:0, borderColor:'#ff6b6b' }}>
+                  <IconButton
+                    size="small"
+                    sx={{ color: '#ff6b6b', mx: 0.5, border: 1, borderRadius: 0, borderColor: '#ff6b6b' }}
+                  >
                     <DeleteOutlineIcon fontSize="small" />
                   </IconButton>
                 </td>
@@ -116,7 +119,7 @@ const ProductAssetMgmnt = () => {
           </tbody>
         </table>
       ) : (
-        // 📱 Mobile Stacked Grid View
+        // 📱 Mobile Card/Grid View
         <Box display="flex" flexDirection="column" gap={2}>
           {data.map((row, i) => (
             <Paper
@@ -132,7 +135,7 @@ const ProductAssetMgmnt = () => {
               <Grid container spacing={1}>
                 <Grid item xs={12}>
                   <Typography fontWeight="bold">S.No.:</Typography>
-                  {i + 1}
+                  <Typography>{i + 1}</Typography>
                 </Grid>
 
                 <Grid item xs={12}>
@@ -147,7 +150,7 @@ const ProductAssetMgmnt = () => {
 
                 <Grid item xs={12}>
                   <Typography fontWeight="bold">Image Info:</Typography>
-                  {row.info}
+                  <Typography>{row.info}</Typography>
                 </Grid>
 
                 <Grid item xs={12}>
@@ -156,7 +159,7 @@ const ProductAssetMgmnt = () => {
                     href={row.url}
                     target="_blank"
                     underline="hover"
-                    sx={{ color: '#6ba4ff', wordBreak: 'break-all' }}
+                    sx={{ color: '#6ba4ff', wordBreak: 'break-word' }}
                   >
                     {row.url}
                     <OpenInNewIcon sx={{ fontSize: 16, ml: 0.5 }} />
@@ -165,12 +168,17 @@ const ProductAssetMgmnt = () => {
 
                 <Grid item xs={12}>
                   <Typography fontWeight="bold">Actions:</Typography>
-                  <IconButton size="small" sx={{ color: '#ffffffff', mr: 1, border:1 , borderRadius:0 }}>
-                    <EditIcon fontSize="small" />
-                  </IconButton>
-                  <IconButton size="small" sx={{ color: '#ff6b6b', border:1 , borderRadius:0, borderColor:'#ff6b6b' }}>
-                    <DeleteOutlineIcon fontSize="small" />
-                  </IconButton>
+                  <Box display="flex" gap={1} mt={1}>
+                    <IconButton size="small" sx={{ color: '#ffffff', border: 1, borderRadius: 0 }}>
+                      <EditIcon fontSize="small" />
+                    </IconButton>
+                    <IconButton
+                      size="small"
+                      sx={{ color: '#ff6b6b', border: 1, borderRadius: 0, borderColor: '#ff6b6b' }}
+                    >
+                      <DeleteOutlineIcon fontSize="small" />
+                    </IconButton>
+                  </Box>
                 </Grid>
               </Grid>
             </Paper>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Inventory from './pages/Inventory';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
+import LandingPage from './pages/landingPage';
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
     >
       <Router>
         <Routes>
-          <Route path="/" element={<Inventory />} />
+          <Route path="/" element={<LandingPage />} />
         </Routes>
       </Router>
     </Box>

@@ -7,19 +7,19 @@ import {
   Tooltip,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import ProductBaseProperties from '../AllProducts/ProductBaseProperties';
+import ProductBaseProperties from '../ListProducts/ProductBaseProperties';
 import HistoryIcon from '@mui/icons-material/History';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import EditIcon from '@mui/icons-material/Edit';
-import TrackingGrid from '../AllProducts/TrackingGrid';
+import TrackingGrid from '../ListProducts/ProductTrackingGrid';
 import ProdMetaAttribute from './ProdCommon'; 
-import Vehicletable from '../AllProducts/Vehicletable';
-import ProductAlternate from '../AllProducts/ProductAltAcc';
-import ProductMetaBlock from '../AllProducts/ProductMetaBlock';
-import ProductAssetMgmnt from '../AllProducts/ProductAssetMgmnt';
+import Vehicletable from '../ListProducts/VehiclesTable';
+import ProductAlternate from '../ListProducts/ProductAltAcc';
+import ProductMetaBlock from '../ListProducts/ProductMetaBlock';
+import ProductAssetMgmnt from '../ListProducts/ProductAssetMgmnt';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-const CommonProductStatistic = ({ iconSrc, title, onEdit, data = [] }) => {
+const CommonProducts = ({ iconSrc, title, onEdit, data = [] }) => {
  const [expanded, setExpanded] = useState(true); // Toggle for collapse
 
   const handleToggleExpand = () => {
@@ -74,10 +74,12 @@ const CommonProductStatistic = ({ iconSrc, title, onEdit, data = [] }) => {
   <Box
     sx={{
       background: 'linear-gradient(135deg, #6C42FC, #C346DD)',
-      borderRadius: '8px',
-      p: 0.5,
+      borderRadius: '4px',
+      p: 0.1,
       display: 'inline-flex',
       alignItems: 'center',
+      width: "full",
+      height: 32,
     }}
   >
 
@@ -87,9 +89,9 @@ const CommonProductStatistic = ({ iconSrc, title, onEdit, data = [] }) => {
         {title === 'Product Asset Management' ||
         title === 'Product Options' ||
         title === 'Product Vehicles' ? (
-          <AddIcon />
+          <AddIcon width={5} height={5} />
         ) : (
-          <EditIcon />
+          <EditIcon width={5} height={5}/>            
         )}
       </IconButton>
     </Tooltip>
@@ -161,4 +163,4 @@ const CommonProductStatistic = ({ iconSrc, title, onEdit, data = [] }) => {
   );
 };
 
-export default CommonProductStatistic;
+export default CommonProducts;

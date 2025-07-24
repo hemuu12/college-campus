@@ -37,8 +37,9 @@ const ProductBaseProperties = () => {
           <Grid item>
             <Box
               sx={{
-                backgroundColor: '#2B2B3C',
+                backgroundColor: '#2f313d',
                 borderRadius: '6px',
+                border: '4px solid #3c3f4a',
                 p: 2,
                 display: 'flex',
                 flexDirection: 'column',
@@ -53,7 +54,7 @@ const ProductBaseProperties = () => {
                 alt="Material"
                 sx={{
                   width: '100%',
-                  maxWidth: 315,
+                  maxWidth: 195,
                   backgroundColor: 'white',
                   borderRadius: 2,
                   p: 1,

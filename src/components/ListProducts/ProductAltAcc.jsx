@@ -13,16 +13,17 @@ import {
 const ProductAlternate = ({ data }) => {
   const theme = useTheme();
 
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // <600px
-  const isMediumScreen = useMediaQuery('(min-width:1025px) and (max-width:1439px)');
-  const isLaptop = useMediaQuery('(min-width:1440px)');
+  const isXs = useMediaQuery(theme.breakpoints.only('xs')); // Mobile
+  const isSm = useMediaQuery(theme.breakpoints.only('sm')); // Tablet
+  const isMd = useMediaQuery(theme.breakpoints.only('md')); // Medium Laptop
+  const isLgUp = useMediaQuery(theme.breakpoints.up('lg')); // 1440px and above
 
-  // 📱 Mobile: Stack layout
-  if (isMobile) {
+  // Mobile & Small Tablet: Grid stacked layout
+  if (isXs || isSm) {
     return (
       <Grid container spacing={2} sx={{ backgroundColor: '#2f2f3c', p: 2, borderRadius: 2 }}>
         {data.map((product, index) => (
-          <Grid item xs={12} key={index}>
+          <Grid item xs={6} sm={4} key={index}>
             <Card
               sx={{
                 backgroundColor: '#2f2f3c',
@@ -41,6 +42,7 @@ const ProductAlternate = ({ data }) => {
                   objectFit: 'contain',
                   backgroundColor: '#fff',
                   mx: 'auto',
+                  mt: 1,
                   borderRadius: 1.5,
                 }}
               />
@@ -56,12 +58,12 @@ const ProductAlternate = ({ data }) => {
     );
   }
 
-  // 🖥️ Medium screens (1025–1439px): Grid layout
-  if (isMediumScreen) {
+  // Medium screen: 4 columns
+  if (isMd) {
     return (
       <Grid container spacing={2} sx={{ backgroundColor: '#2f2f3c', p: 2, borderRadius: 2 }}>
         {data.map((product, index) => (
-          <Grid item xs={6} sm={4} md={3} lg={2} key={index}>
+          <Grid item xs={6} sm={4} md={3} key={index}>
             <Card
               sx={{
                 backgroundColor: '#2f2f3c',
@@ -98,55 +100,69 @@ const ProductAlternate = ({ data }) => {
     );
   }
 
-  // 💻 Laptop (≥1440px): Horizontal scroll
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        gap: 2,
-        overflowX: 'auto',
-        backgroundColor: '#2f2f3c',
-        padding: 2,
-        borderRadius: '10px',
-      }}
-    >
-      {data.map((product, index) => (
-        <Card
-          key={index}
-          sx={{
-            minWidth: 120,
-            maxWidth: 120,
-            backgroundColor: '#2f2f3c',
+  // Large screens (≥lg): horizontal scroll with fixed card widths
+  if (isLgUp) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 2,
+          overflowX: 'auto',
+          backgroundColor: '#2f2f3c',
+          padding: 2,
+          borderRadius: '10px',
+          '&::-webkit-scrollbar': {
+            height: '6px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: 'rgba(255,255,255,0.2)',
             borderRadius: '8px',
-            textAlign: 'center',
-            flexShrink: 0,
-            color: '#fff',
-            boxShadow: '0 0 6px 2px rgba(255, 255, 255, 0.1)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-          }}
-        >
-          <CardMedia
-            component="img"
-            image={product.image}
-            alt={product.label}
+          },
+        }}
+      >
+        {data.map((product, index) => (
+          <Card
+            key={index}
             sx={{
-              height: 60,
-              objectFit: 'contain',
-              backgroundColor: '#fff',
-              mx: 'auto',
-              mt: 1,
-              borderRadius: 1.5,
+              minWidth: 100,
+              maxWidth: 100,
+              backgroundColor: '#2f2f3c',
+              borderRadius: '8px',
+              textAlign: 'center',
+              flexShrink: 0,
+              color: '#fff',
+              boxShadow: '0 0 6px 2px rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+              p: 0.1,
             }}
-          />
-          <CardContent sx={{ padding: 1 }}>
-            <Typography variant="body2" color="inherit">
-              {product.label}
-            </Typography>
-          </CardContent>
-        </Card>
-      ))}
-    </Box>
-  );
+          >
+            <CardMedia
+              component="img"
+              image={product.image}
+              alt={product.label}
+              sx={{
+                height: 60,
+                objectFit: 'contain',
+                backgroundColor: '#fff',
+                mx: 'auto',
+                mt: 1,
+                borderRadius: 1.5,
+                
+              }}
+            />
+            <CardContent sx={{ padding: 1 }}>
+              <Typography variant="body2" color="inherit">
+                {product.label}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </Box>
+    );
+  }
+
+  // Fallback (any other screen size)
+  return null;
 };
 
 export default ProductAlternate;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 
-const ProdMetaAttribute = ({ data = [], title }) => {
+const ProdAttribute = ({ data = [], title }) => {
   const columnCount = title === 'Product Metadata Attributes' ? 3 : 4;
 
   return (
@@ -32,4 +32,4 @@ const ProdMetaAttribute = ({ data = [], title }) => {
   );
 };
 
-export default ProdMetaAttribute;
+export default ProdAttribute;

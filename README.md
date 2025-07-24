@@ -1,9 +1,31 @@
-# GrayCyanAssignment
+# 🎓 CollegeCampus
 
-prerequisites 
-Clone the repo - git clone -b main https://github.com/Swapmau9495/GrayCyanAssignment.git
- got to -  cd .\GrayCyanAssignment\
- Install dependencies - npm install
- run the app -  npm run dev
+A responsive React + MUI application that dynamically renders product data with optimized layouts for both desktop and mobile screens.
 
- open http://localhost:5173/ in browser
+---
+
+## ✅ Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- npm (Node package manager)
+
+---
+
+## 🛠️ Getting Started
+
+Follow the steps below to run this project locally:
+
+```bash
+# 1. Clone the repository
+git clone -b main https://github.com/hemuu12/college-campus.git
+
+# 2. Navigate into the project directory
+cd college-campus
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev

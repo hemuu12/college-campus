@@ -24,7 +24,7 @@ const ProductMetaBlock = () => {
       sx={{
         backgroundColor: '#2f2f3c',
         borderRadius: 2,
-        padding: isMobile ? 1.5 : 2,
+        padding: isMobile ? 1.2 : 2,
         mb: 2,
         display: 'flex',
         flexDirection: isMobile ? 'column' : 'row',
@@ -46,7 +46,6 @@ const ProductMetaBlock = () => {
         sx={{
           background: 'linear-gradient(135deg, #6C42FC, #C346DD)',
           borderRadius: '8px',
-          p: 0.5,
           mt: isMobile ? 1.5 : 0,
         }}
       >
